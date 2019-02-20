@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mylike-taro," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="文档目的这个文档主要是介绍一下使用taro 开发的mylike 小程序，主要是环境搭建，项目运行等内容。 参考或下载链接  [小程序官方文档]: https://developers.weixin.qq.com/miniprogram/dev/component/ [Taro官方文档]: https://nervjs.github.io/taro/docs/GETTING-STARTED.html">
+<meta name="keywords" content="mylike-taro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mylike-taro文档(基础篇)">
+<meta property="og:url" content="http://yoursite.com/2019/02/18/mylike-taro文档-基础篇/index.html">
+<meta property="og:site_name" content="陆荣泽的个人GitHub主页">
+<meta property="og:description" content="文档目的这个文档主要是介绍一下使用taro 开发的mylike 小程序，主要是环境搭建，项目运行等内容。 参考或下载链接  [小程序官方文档]: https://developers.weixin.qq.com/miniprogram/dev/component/ [Taro官方文档]: https://nervjs.github.io/taro/docs/GETTING-STARTED.html">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/mylike-taro/root-dir.png">
+<meta property="og:image" content="http://yoursite.com/images/mylike-taro/we-tools-create.png">
+<meta property="og:updated_time" content="2019-02-20T02:52:47.539Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mylike-taro文档(基础篇)">
+<meta name="twitter:description" content="文档目的这个文档主要是介绍一下使用taro 开发的mylike 小程序，主要是环境搭建，项目运行等内容。 参考或下载链接  [小程序官方文档]: https://developers.weixin.qq.com/miniprogram/dev/component/ [Taro官方文档]: https://nervjs.github.io/taro/docs/GETTING-STARTED.html">
+<meta name="twitter:image" content="http://yoursite.com/images/mylike-taro/root-dir.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/18/mylike-taro文档-基础篇/"/>
+
+
+
+
+
+  <title>mylike-taro文档(基础篇) | 陆荣泽的个人GitHub主页</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">陆荣泽的个人GitHub主页</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/mylike-taro文档-基础篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陆荣泽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陆荣泽的个人GitHub主页">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mylike-taro文档(基础篇)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T10:15:59+08:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mylike-taro/" itemprop="url" rel="index">
+                    <span itemprop="name">mylike-taro</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="文档目的"><a href="#文档目的" class="headerlink" title="文档目的"></a>文档目的</h4><p>这个文档主要是介绍一下使用taro 开发的mylike 小程序，主要是环境搭建，项目运行等内容。</p>
+<p>参考或下载链接</p>
+<ul>
+<li>[小程序官方文档]: <a href="https://developers.weixin.qq.com/miniprogram/dev/component/" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/component/</a></li>
+<li>[Taro官方文档]: <a href="https://nervjs.github.io/taro/docs/GETTING-STARTED.html" target="_blank" rel="noopener">https://nervjs.github.io/taro/docs/GETTING-STARTED.html</a></li>
+<li>[node下载]: <a href="https://nodejs.org/download/release/v8.14.0/node-v8.14.0-x64.msi" target="_blank" rel="noopener">https://nodejs.org/download/release/v8.14.0/node-v8.14.0-x64.msi</a></li>
+<li>[yarn下载]: <a href="https://yarnpkg.com/latest.msi" target="_blank" rel="noopener">https://yarnpkg.com/latest.msi</a></li>
+<li>[微信开发者工具下载]: <a href="https://servicewechat.com/wxa-dev-logic/download_redirect?type=x64&amp;from=mpwiki" target="_blank" rel="noopener">https://servicewechat.com/wxa-dev-logic/download_redirect?type=x64&amp;from=mpwiki</a></li>
+<li>[react 文档]: <a href="https://react.docschina.org/docs/hello-world.html" target="_blank" rel="noopener">https://react.docschina.org/docs/hello-world.html</a></li>
+</ul>
+<h4 id="开发环境安装"><a href="#开发环境安装" class="headerlink" title="开发环境安装"></a>开发环境安装</h4><ul>
+<li><p>node 安装(提供node 环境)<br>  下载软件直接默认安装即可，尽量安装在C盘，安装成功后，打开CMD，输入</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry http://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>yarn 安装(node 的包管理工具，类似Java中maven的作用，和NPM功能基本一样，只是速度快一些，一般初始化项目安装包依赖的时候首选)<br>  下载软件直接默认安装即可，安装成功后，打开CMD，输入</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config set registry http://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
+<p>  上面的两个命令是把包管理工具的包源地址改为淘宝提供的地址，因为默认的地址是国外的，网络会比较慢或者访问不了。</p>
+</li>
+<li><p>开发者工具安装<br>  下载软件直接默认安装即可</p>
+</li>
+<li><p>taro 安装<br>  正常是安装最新版本的，不过为了统一，建议大家都安装同一个版本，现在开发使用的是1.2.8 版本<br>  打开CMD，输入</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn global add @tarojs/cli@1.2.8</span><br></pre></td></tr></table></figure>
+<p>  安装过程可能需要几分钟，有个别warning的提示可以忽略。<br>  如果上面的命令安装不了，那就用NPM安装，效果一样的</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @tarojs/cli@1.2.8</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>Tip: 所有的安装路径都尽量不要带中文和空格</p>
+</blockquote>
+<h4 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h4><p>上面已经把环境都安装好了，如果没有问题的话，应该进入下一步开始开发了。可以taro init app 来新初始化项目开发。<br>这里我们用GIT clone代码下来，安装依赖进行开发。下面默认已安装GIT</p>
+<ul>
+<li><p>clone 代码<br>  代码的GIT 地址 <a href="https://git.dev.tencent.com/gancl/mylikelite.git。" target="_blank" rel="noopener">https://git.dev.tencent.com/gancl/mylikelite.git。</a></p>
+<blockquote>
+<p>注意: 代码clone路径不要带中文和空格</p>
+</blockquote>
+<p>  clone 下来的代码如下，刚clone下来的代码是没有/dist 和 /node_modules。/.idea 目录是IDE的，和项目无关。<br>  开发工作全都在/src 目录中完成。 /package.json 是依赖管理文件文件，类似Java 中pom.xml 文件。/.pull.bat是GIT拉取代码的快捷方式。</p>
+<blockquote>
+<p><img src="/images/mylike-taro/root-dir.png" alt="代码根目录"></p>
+</blockquote>
+</li>
+<li><p>安装依赖<br>  打开CMD，进入到项目根目录，即/package.json 文件所在目录。例子中是F:\workspace\taro\taroConverte，输入</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn</span><br></pre></td></tr></table></figure>
+<p>  执行，等待依赖安装完成即可。<br>  在这里，如果是重复安装依赖的，有可能会报node-sass错误（错误信息中看到node-sass基本是这种情况）。<br>  在项目根目录执行下面的代码</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add node-sass --save</span><br></pre></td></tr></table></figure>
+<p>  成功安装完依赖后，根目录会多出/node_modules 目录，里面是依赖包文件。开发不会修改里面的文件。</p>
+</li>
+</ul>
+<h4 id="运行项目和预览"><a href="#运行项目和预览" class="headerlink" title="运行项目和预览"></a>运行项目和预览</h4><p>依赖安装成功后，项目的基本准备都OK了。可以开始运行项目啦</p>
+<ul>
+<li><p>运行项目<br>  上面一切正常的话，就可以运行项目啦。<br>  首先，我们需要看一下/package.json 文件的一些内容，如下</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;taroConvert&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;build:weapp&quot;: &quot;taro build --type weapp&quot;,</span><br><span class="line">    &quot;build:swan&quot;: &quot;taro build --type swan&quot;,</span><br><span class="line">    &quot;build:alipay&quot;: &quot;taro build --type alipay&quot;,</span><br><span class="line">    &quot;build:h5&quot;: &quot;taro build --type h5&quot;,</span><br><span class="line">    &quot;build:rn&quot;: &quot;taro build --type rn&quot;,</span><br><span class="line">    &quot;dev:weapp&quot;: &quot;npm run build:weapp -- --watch&quot;,</span><br><span class="line">    &quot;dev:swan&quot;: &quot;npm run build:swan -- --watch&quot;,</span><br><span class="line">    &quot;dev:alipay&quot;: &quot;npm run build:alipay -- --watch&quot;,</span><br><span class="line">    &quot;dev:h5&quot;: &quot;npm run build:h5 -- --watch&quot;,</span><br><span class="line">    &quot;dev:rn&quot;: &quot;npm run build:rn -- --watch&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    ......</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    ......</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  主要关注scripts 下的几条命令。我们微信小程序开发只用到到其中的两个<code>build:weapp</code>，<code>dev:weapp</code>。<br>  这里的命令，其实都是简化的命令，打命令运行其实实际运行的是后面的那一串命令。<br>  在根目录输入</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn dev:weapp</span><br></pre></td></tr></table></figure>
+<p>  或</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev:weapp</span><br></pre></td></tr></table></figure>
+<p>  执行后，等待运行完成，执行完成后，根目录下会生成/dist 目录， /dist 目录是编译后的文件，实际上小程序最后上传的也是这里面的代码</p>
+</li>
+<li><p>小程序开发者工具中预览<br>  把项目代码导入小程序开发者工具中，新建项目，代码目录选择刚刚生成的/dist 目录，如下图</p>
+<blockquote>
+<p><img src="/images/mylike-taro/we-tools-create.png" alt="代码根目录"></p>
+</blockquote>
+<p>  代码导入成功后，应该就可以查看项目了。保持 yarn dev:weapp 运行，修改src 里面的代码，就可以随时查看修改的结果了。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mylike-taro/" rel="tag"># mylike-taro</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/03/docker的一些使用/" rel="next" title="docker的一些使用">
+                <i class="fa fa-chevron-left"></i> docker的一些使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/20/mylike-taro文档-结构篇/" rel="prev" title="mylike-taro文档(结构篇)">
+                mylike-taro文档(结构篇) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="陆荣泽" />
+          <p class="site-author-name" itemprop="name">陆荣泽</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#文档目的"><span class="nav-number">1.</span> <span class="nav-text">文档目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开发环境安装"><span class="nav-number">2.</span> <span class="nav-text">开发环境安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目准备"><span class="nav-number">3.</span> <span class="nav-text">项目准备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行项目和预览"><span class="nav-number">4.</span> <span class="nav-text">运行项目和预览</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陆荣泽</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
