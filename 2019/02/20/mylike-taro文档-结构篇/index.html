@@ -103,7 +103,7 @@
 <meta property="og:description" content="文档目的这个文档主要是介绍一下使用taro 开发的mylike 小程序的代码结构。 项目代码结构 根目录   123456├─config (打包配置文件)├─dist (编译结果文件)├─node_modules (包源码文件)├─src (工作代码目录)├─package.json (包管理文件)├─......  /src中的一级目录，   1234567891011| app.js (项目">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/mylike-taro/we-tools-url.png">
-<meta property="og:updated_time" content="2019-02-20T03:47:23.283Z">
+<meta property="og:updated_time" content="2019-02-20T08:21:18.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mylike-taro文档(结构篇)">
 <meta name="twitter:description" content="文档目的这个文档主要是介绍一下使用taro 开发的mylike 小程序的代码结构。 项目代码结构 根目录   123456├─config (打包配置文件)├─dist (编译结果文件)├─node_modules (包源码文件)├─src (工作代码目录)├─package.json (包管理文件)├─......  /src中的一级目录，   1234567891011| app.js (项目">
@@ -375,6 +375,7 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">├─utils</span><br><span class="line">│  │  helper.js</span><br><span class="line">│  │  util.js</span><br><span class="line">│  │  .....</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h4 id="新增页面"><a href="#新增页面" class="headerlink" title="新增页面"></a>新增页面</h4><p>1.在/pages 或者/pka 里面加对于的js 和 scss 文件。<br>2.在 app.js 里面加上对应的页面路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">--app.js 找到下面部分的代码，大约在 655 行</span><br><span class="line">  config = &#123;</span><br><span class="line">      pages: [</span><br><span class="line">        &apos;pages/home/index/index&apos;,</span><br><span class="line">        &apos;pages/service/self-register/index&apos;,</span><br><span class="line">        &apos;pages/service/self-register/qrcode/index&apos;,</span><br><span class="line">        ......这里加上新的路径， pages 目录下的</span><br><span class="line">      ],</span><br><span class="line">      &apos;subpackages&apos; : [ // 分包</span><br><span class="line">        &#123;</span><br><span class="line">          &quot;root&quot;: &quot;pka&quot;,</span><br><span class="line">          &quot;pages&quot;: [</span><br><span class="line">            &apos;crowd/index&apos;,</span><br><span class="line">            &apos;crowd/signup&apos;,</span><br><span class="line">             .....这里加上新的路径， pka 目录下的</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      ......</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -551,7 +552,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#文档目的"><span class="nav-number">1.</span> <span class="nav-text">文档目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目代码结构"><span class="nav-number">2.</span> <span class="nav-text">项目代码结构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#文档目的"><span class="nav-number">1.</span> <span class="nav-text">文档目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目代码结构"><span class="nav-number">2.</span> <span class="nav-text">项目代码结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新增页面"><span class="nav-number">3.</span> <span class="nav-text">新增页面</span></a></li></ol></div>
             
 
           </div>
