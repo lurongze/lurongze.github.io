@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="LLDMZ的个人GitHub主页">
 <meta property="og:description" content="这里放一些平时遇到的比较有用的网址，以防忘记  [GraphQL]: http://graphql.cn/ GraphQL 既是一种用于 API 的查询语言也是一个满足你数据查询的运行时。 GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。     [">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-15T02:22:48.230Z">
+<meta property="og:updated_time" content="2019-04-30T02:14:40.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="收藏的一些网址">
 <meta name="twitter:description" content="这里放一些平时遇到的比较有用的网址，以防忘记  [GraphQL]: http://graphql.cn/ GraphQL 既是一种用于 API 的查询语言也是一个满足你数据查询的运行时。 GraphQL 对你的 API 中的数据提供了一套易于理解的完整描述，使得客户端能够准确地获得它需要的数据，而且没有任何冗余，也让 API 更容易地随着时间推移而演进，还能用于构建强大的开发者工具。     [">
@@ -365,6 +365,19 @@
 </li>
 </ul>
 <a id="more"></a>
+<ul>
+<li><p>[JS前端生成excel 文档]: <a href="https://github.com/SheetJS/js-xlsx.git" target="_blank" rel="noopener">https://github.com/SheetJS/js-xlsx.git</a></p>
+<blockquote>
+<p>可以在浏览器生成excel文件。例子如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import XLSX from &apos;xlsx&apos;;</span><br><span class="line">export const downExcel = (fileName = &apos;sheetjs&apos;, header, list) =&gt; &#123;</span><br><span class="line">  const ws = XLSX.utils.aoa_to_sheet([...[header], ...list]);</span><br><span class="line">  const wb = XLSX.utils.book_new();</span><br><span class="line">  XLSX.utils.book_append_sheet(wb, ws, &quot;SheetJS&quot;);</span><br><span class="line">  /* generate file and send to client */</span><br><span class="line">  XLSX.writeFile(wb, `$&#123;fileName&#125;.xlsx`);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>[轮子工厂]: <a href="http://www.wheelsfactory.cn/#/" target="_blank" rel="noopener">http://www.wheelsfactory.cn/#/</a></p>
+<blockquote>
+<p>这里有很多vue，angular的插件。</p>
+</blockquote>
+</li>
+</ul>
 <ul>
 <li><p>[Dexie]: <a href="https://dexie.org/" target="_blank" rel="noopener">https://dexie.org/</a></p>
 <blockquote>
